@@ -5,9 +5,7 @@
     <body>
         <!-- Include Navbar -->
         <%- include('./partials/nav.ejs') %>
-
         <main class="blogs content">
-
             <h2>All Blogs</h2>
             <hr>
             <% if(blogs.length > 0) { %>
@@ -21,11 +19,8 @@
                 <h2>There isn't any blogs to display!</h2>
                 <a href="/blogs/create">Create a new one!</a>
             <% } %>
-
             </main>
-
         <!-- Include footer -->
         <%- include('./partials/footer.ejs') %>
-
     </body>
 </html>
