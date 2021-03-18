@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-
 :root {
     --background-color : #00173d;
     --color : #fcb045;
     --hover-color : #fd1d1d;
 }
-
 *, *::before, *::after {
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-
 html {
     background-color: var(--background-color);
     color: var(--color);
 }
-
 body{
     height:100vh;
     overflow:hidden;
@@ -33,7 +29,6 @@ p, h1, h2, h3, a, ul{
     text-decoration: none;
     color : var(--color);
 }
-
 /* nav & footer styles */
 nav{
     display: flex;
@@ -43,12 +38,10 @@ nav{
     border-bottom: 1px solid var(--color);
     text-transform: uppercase;
 }
-
 hr {
     border-color: var(--color);
     width:100%;
 }
-
 nav ul{
     display: flex;
     justify-content: space-between;
@@ -65,17 +58,14 @@ nav p, nav a{
     color: var(--color);
     font-weight: 300;
 }
-
 .Link {
     transition:0.3s;
 }
-
 .Link:hover{
     font-size: 24px;
     font-weight:bold;
     transition:0.3s;
 }
-
 footer{
     color: var(--color);
     font-weight:bold;
@@ -95,7 +85,6 @@ h3{
 .content{
     margin-left: 20px;
 }
-
 /* index styles */
 .blogs a{
     display: block;
@@ -122,7 +111,6 @@ h3{
     cursor: pointer;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
-
 /* create styles */
 .create-blog form{
     max-width: 400px;
@@ -154,7 +142,6 @@ textarea{
     align-self: center;
     justify-self: center;
 }
-
 main{
     flex:1;
     overflow-y:scroll;
