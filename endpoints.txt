@@ -1,0 +1,21 @@
+---> Main Routes
+"/": Render Home page >> GET
+"/register": Render register page >> GET
+"/register": Handle register requests >> POST
+"/login": Render login page >> GET
+"/login": Handle login requests >> POST
+"/--Unknown": 404 Page >> GET
+
+---> Users Routes
+"/users": all users >> GET
+"/users/user/:id": specific user page >> GET
+"/users/user/:id": delete specific user >> DELETE
+
+---> Posts Routes
+"/posts": Render all posts page >> GET
+"/posts/:id": Render specific user's posts page >> GET
+"/posts/new/:id": Handle new post requests >> POST
+"/posts/post/:id": Render specific post page >> GET
+"/posts/post/:id": Handle delete specific post >> DELETE
+
+
