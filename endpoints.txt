@@ -1,0 +1,36 @@
+---> Main Routes
+"/": Render Home page >> GET
+"/register": Render register page >> GET
+"/register": Handle register requests >> POST
+"/login": Render login page >> GET
+"/login": Handle login requests >> POST
+"/--Unknown": 404 Page >> GET
+
+---> Users Routes
+"/users/": all users >> GET
+"/users/user": specific user page >> GET
+"/users/user/delete": delete specific user >> DELETE
+"/users/user/update": Update specific user >> PUT
+
+---> Posts Routes
+"/posts/": Render all posts page >> GET
+"/posts/user": Render specific user's posts page >> GET
+"/posts/new": Handle new post requests >> POST
+"/posts/post": Render specific post page >> GET
+"/posts/post/delete": Handle delete specific post >> DELETE
+"/posts/post/update": Handle Update post requests  >> PUT
+
+---> Comment Routes
+"/comments/new": Add new comment >> POST
+"/comments/delete": Remove a specific comment >> DELETE 
+"/comments/post": Render specific post's comments >> GET
+"/comments/update": Update specific comment >> PUT
+
+---> Reaction Routes
+"/reactions/new": Add new reaction >> POST
+"/reactions/delete": Remove a specific reaction >> DELETE 
+"/reactions/post": Render specific post's reactions >> GET
+"/reactions/update": Update specific Reaction >> PUT
+
+---> Relation Routes
+"/users/user/add": Add user to friends list >> POST
