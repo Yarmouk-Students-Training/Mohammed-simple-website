@@ -33,4 +33,7 @@
 "/reactions/update": Update specific Reaction >> PUT
 
 ---> Relation Routes
-"/users/user/add": Add user to friends list >> POST
+"/relation/all": All Relations >> "DEBUG" GET
+"/relation/add": Add a user as a friend >> POST
+"/relation/user": A Specific user's relations >> GET
+"/relation/update": Update a certain relation between 2 users >> PUT
