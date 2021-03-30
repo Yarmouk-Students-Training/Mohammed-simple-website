@@ -1,12 +1,13 @@
+require("dotenv").config();
 const { sequelize, user, auth_token } = require('./models');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 // Routers
 const userRouter = require('./routes/userRouter');
 const postRouter = require('./routes/postsRouter');
-const relationRouter = require('./routes/relationRouter');
 const commentRouter = require('./routes/commentRouter');
 const reactionRouter = require('./routes/reactionsRouter');
+const relationRouter = require('./routes/relationRouter');
 
 app = express(); // init the express app
 // Middlewares
@@ -21,7 +22,7 @@ app.listen(3000, async () => {
 });
 
 app.get('/', Verify_Token, (req,res)=>{ // Render home page 
-    jwt.verify(req.token, 'secretkey', (err,authData)=>{
+    jwt.verify(req.token, process.env.SECRET_KEY, (err,authData)=>{
         if(err) {
             console.log(err);
             return res.status(403).send("Authentication Error");
@@ -57,7 +58,7 @@ app.post('/login',async(req,res)=>{ // Handle login requests
         const { username, password } = req.body;
         const User = await user.findOne({ username, password });
         if( User ){
-            jwt.sign({ User }, 'secretkey' , async (err,token)=>{
+            jwt.sign({ User }, process.env.SECRET_KEY, { expiresIn:"3600s" } , async (err,token)=>{
                 console.log(err);
                 const user_id = User.dataValues.user_id;
                 await auth_token.create( {  user_id , token } );
@@ -91,7 +92,7 @@ app.delete('/logout', async(req,res)=>{
 
 
 app.post('/test',Verify_Token,(req,res)=>{
-    jwt.verify(req.token, 'secretkey', (err, authData)=>{
+    jwt.verify(req.token, process.env.SECRET_KEY, (err, authData)=>{
         if(err) {
             res.status(403).send("Authentication error.");
         } else {
